@@ -117,6 +117,7 @@
         </div>
 
         <div class="payment-info">
+            <p>For Bank Transfer:</p>
             
             <style>
         table {
@@ -137,104 +138,74 @@
 </head>
 <body>
 
+<h2>Bank Details</h2>
 
-<style>
-* {
-  box-sizing: border-box;
-}
+<table>
+    <tr>
+        <th>Detail</th>
+        <th>Value</th>
+    </tr>
+    <tr>
+        <td>Account Number</td>
+        <td><b>123456789</b></td>
+    </tr>
+    <tr>
+        <td>Bank Name</td>
+        <td>Commercial Bank</td>
+    </tr>
+    <tr>
+        <td>Branch</td>
+        <td>Kurunegala</td>
+    </tr>
+    <tr>
+        <td>Account Holder's Name</td>
+        <td>Chamuditha Lankathilaka</td>
+    </tr>
+</table>
+            
+        </div>
 
-.columns {
-  float: left;
-  width: 33.3%;
-  padding: 8px;
-}
-
-.price {
-  list-style-type: none;
-  border: 1px solid #eee;
-  margin: 0;
-  padding: 0;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.price:hover {
-  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
-}
-
-.price .header {
-  background-color: #111;
-  color: white;
-  font-size: 25px;
-}
-
-.price li {
-  border-bottom: 1px solid #eee;
-  padding: 20px;
-  text-align: center;
-}
-
-.price .grey {
-  background-color: #eee;
-  font-size: 20px;
-}
-
-.button {
-  background-color: #04AA6D;
-  border: none;
-  color: white;
-  padding: 10px 25px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-@media only screen and (max-width: 600px) {
-  .columns {
-    width: 100%;
-  }
-}
-</style>
+        <div class="terms">
+            <p><strong>Terms and Conditions:</strong></p>
+            <p>Payment is due within 30 days.</p>
+            <p>Late payments may incur a fee.*</p>
+        </div></br>
+        <p>For Online Payment:</p>
+        <h2>Pay Online</h2>
+        
+        </style>
+<script src="https://www.paypal.com/sdk/js?client-id=AeUsw3wcIEoyRn61BfxeXRw_f8_7H2y-5MSW3YbkQZz_uYWje9FVN3g9JpsMnUmBSVgaqXSStKf1LHE-"></script>
 </head>
 <body>
+        <div id="paypal-button-container"></div>
+      </form>
+    </div>
+  </div>
 
-<div class="columns">
-  <ul class="price">
-    <li class="header" style="background-color:#04AA6D">Without Domain</li>
-    <li class="grey">$ 16.50 </br>
-    රුපියල් 5,000.00</li>
-    <li>Without costom domain .com .ne or .org</li>
-    <li class="grey"><a href="basic.html" class="button">Pay Now</a></li>
-  </ul>
-</div>
+<script>
+  paypal.Buttons({
+    createOrder: function(data, actions) {
+      return actions.order.create({
+        purchase_units: [{
+          amount: {
+            value: '146.5' // Change this value to the total amount
+          }
+        }]
+      });
+    },
+    onApprove: function(data, actions) {
+      return actions.order.capture().then(function(details) {
+        alert('Transaction completed by ' + details.payer.name.given_name);
+        // Redirect to a success page or perform further actions here
+      });
+    }
+  }).render('#paypal-button-container');
 
-
-<div class="columns">
-  <ul class="price">
-    <li class="header">For 1 Year</li>
-    <li class="grey">$ 30.00 / year </br>රුපියල් 9,091.08</li>
-    <li>Recuring payment every 12 months</li>
-    <li class="grey"><a href="standard.html" class="button">Pay Now</a></li>
-  </ul>
-</div>
-
-<div class="columns">
-  <ul class="price">
-    <li class="header" style="background-color:#04AA6D">For 10 Year</li>
-    <li class="grey">$ 146.5 </br>
-    රුපියල් 44,389.63</li>
-    <li>Recuring payment every 10 years</li>
-    <li class="grey"><a href="premium.html" class="button">Pay Now</a></li>
-  </ul>
-</div>
-           
-        
-        </br>
-        </br>
-        </br>
-        </br>
-        </br>
-        </br>
+  document.getElementById('place-order').addEventListener('click', function () {
+    // Trigger PayPal payment
+    document.querySelector('.paypal-button').click();
+  });
+</script>
 
         <div class="footer">
             <p>Thank you for your business!</p>
