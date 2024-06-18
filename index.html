@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .invoice-container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .company-info, .client-info, .invoice-info {
+            margin-bottom: 20px;
+        }
+        .company-info {
+            text-align: left;
+        }
+        .client-info, .invoice-info {
+            text-align: right;
+        }
+        .company-info, .client-info, .invoice-info, .items, .summary {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .items table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .items th, .items td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .items th {
+            background-color: #f4f4f4;
+        }
+        .summary {
+            text-align: right;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="invoice-container">
+        <h1>Invoice</h1>
+
+        <div class="company-info">
+            <p><strong>Creative Curvee</strong></p>
+            <p>Kurunegala, Sri Lanka	&#x1f1f1;&#x1f1f0;</p>
+            <p>+94 78 113 2477	&#x1f1f1;&#x1f1f0;</p>
+            <p>+1 (954) 954 6469 &#x1f1fa; &#x1f1f8;</p>
+            <p>info@creativecurvee.com</p>
+        </div>
+
+        <div class="client-info">
+            <p><strong>Bill To:</strong></p>
+            <p>ThiAura International</p>
+            <p>unknown</p>
+            <p>+94 71 905 8337 &#x1f1f1;&#x1f1f0;</p>
+            <p>unknown</p>
+        </div>
+
+        <div class="invoice-info">
+            <p>Invoice Number: 334</p>
+            <p>Date: 2024-06-18</p>
+            <p>Due Date: 2024-07-18</p>
+        </div>
+
+        <div class="items">
+            <table>
+                <tr>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td>Basic website design</td>
+                    <td>1</td>
+                    <td>$16.5 (5000 LKR)</td>
+                    <td>$16.5 (5000 LKR)</td>
+                </tr>
+                <tr>
+                    <td>(.com) domain</td>
+                    <td>1 *For 10 years</td>
+                    <td>13*10= $130</td>
+                    <td>130 USD (39390.12 LKR)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="summary">
+            <p>Subtotal: 16.5 USD + 150 USD</p>
+            <p>Taxes: Always zero $0.00</p>
+            <p>Discount: 0%</p>
+            <h2>Grand Total: <b>146.5 USD</b> <i>(44,389.63 LKR)</i></h2>
+        </div>
+
+        <div class="payment-info">
+            
+            <style>
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border: 1px solid #ccc;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.columns {
+  float: left;
+  width: 33.3%;
+  padding: 8px;
+}
+
+.price {
+  list-style-type: none;
+  border: 1px solid #eee;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.price:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+.price .header {
+  background-color: #111;
+  color: white;
+  font-size: 25px;
+}
+
+.price li {
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+}
+
+.price .grey {
+  background-color: #eee;
+  font-size: 20px;
+}
+
+.button {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 600px) {
+  .columns {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="columns">
+  <ul class="price">
+    <li class="header" style="background-color:#04AA6D">Without Domain</li>
+    <li class="grey">$ 16.50 </br>
+    රුපියල් 5,000.00</li>
+    <li>Without costom domain .com .ne or .org</li>
+    <li class="grey"><a href="basic.html" class="button">Pay Now</a></li>
+  </ul>
+</div>
+
+
+<div class="columns">
+  <ul class="price">
+    <li class="header">For 1 Year</li>
+    <li class="grey">$ 30.00 / year </br>රුපියල් 9,091.08</li>
+    <li>Recuring payment every 12 months</li>
+    <li class="grey"><a href="standard.html" class="button">Pay Now</a></li>
+  </ul>
+</div>
+
+<div class="columns">
+  <ul class="price">
+    <li class="header" style="background-color:#04AA6D">For 10 Year</li>
+    <li class="grey">$ 146.5 </br>
+    රුපියල් 44,389.63</li>
+    <li>Recuring payment every 10 years</li>
+    <li class="grey"><a href="premium.html" class="button">Pay Now</a></li>
+  </ul>
+</div>
+           
+        
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+
+        <div class="footer">
+            <p>Thank you for your business!</p>
+        </div>
+    </div>
+</body>
+</html>
